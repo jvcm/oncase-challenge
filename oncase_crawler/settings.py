@@ -16,8 +16,11 @@ BOT_NAME = 'oncase_crawler'
 SPIDER_MODULES = ['oncase_crawler.spiders']
 NEWSPIDER_MODULE = 'oncase_crawler.spiders'
 
-FEED_URI = './techtudo_data_articles.jl'
+FEED_URI = 's3://oncase-bucket-s3/techtudo/techtudo_data_articles.jl'
 FEED_FORMAT = 'jl'
+
+AWS_ACCESS_KEY_ID = "AKIAWXB5GTP4FT3MFQBY"
+AWS_SECRET_ACCESS_KEY = "Z8XErSo8IV8ANpMPxekgwH143h9v2fuYgY2C6uj"
 
 LOG_ENABLED = True
 LOG_FILE = './{}.log'.format(datetime.now().strftime("%d-%m-%YT%H-%M-%S"))
@@ -55,11 +58,11 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-SPIDER_MIDDLEWARES = {
-    'scrapy_deltafetch.DeltaFetch': 100,
-}
+# SPIDER_MIDDLEWARES = {
+#     'scrapy_deltafetch.DeltaFetch': 100,
+# }
 
-DELTAFETCH_ENABLED = True
+# DELTAFETCH_ENABLED = True
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
