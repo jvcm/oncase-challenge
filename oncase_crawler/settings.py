@@ -16,11 +16,11 @@ BOT_NAME = 'oncase_crawler'
 SPIDER_MODULES = ['oncase_crawler.spiders']
 NEWSPIDER_MODULE = 'oncase_crawler.spiders'
 
-FEED_URI = './data/techtudo_data_articles.jl'
+FEED_URI = './techtudo_data_articles.jl'
 FEED_FORMAT = 'jl'
 
 LOG_ENABLED = True
-LOG_FILE = './data/log/{}.log'.format(datetime.now().strftime("%d-%m-%YT%H-%M-%S"))
+LOG_FILE = './{}.log'.format(datetime.now().strftime("%d-%m-%YT%H-%M-%S"))
 LOG_LEVEL = 'INFO'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
