@@ -16,11 +16,9 @@ BOT_NAME = 'oncase_crawler'
 SPIDER_MODULES = ['oncase_crawler.spiders']
 NEWSPIDER_MODULE = 'oncase_crawler.spiders'
 
-FEED_URI = 's3://oncase-bucket-s3/techtudo/techtudo_data_articles.jl'
+FEED_URI = './techtudo_data_articles.jl'
 FEED_FORMAT = 'jl'
 
-AWS_ACCESS_KEY_ID = "AKIAWXB5GTP4FT3MFQBY"
-AWS_SECRET_ACCESS_KEY = "Z8XErSo8IV8ANpMPxekgwH143h9v2fuYgY2C6uj"
 
 LOG_ENABLED = True
 LOG_FILE = './{}.log'.format(datetime.now().strftime("%d-%m-%YT%H-%M-%S"))
