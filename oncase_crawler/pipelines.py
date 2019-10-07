@@ -9,6 +9,11 @@ import json
 from scrapy.exceptions import DropItem
 from unicodedata import normalize
 from bs4 import BeautifulSoup
+import pandas as pd
+import mysql.connector
+from sqlalchemy import create_engine
+
+engine = create_engine('mysql+mysqlconnector://admin:admin123@articles-db.cxptre9ih5mz.us-east-2.rds.amazonaws.com:3306/articles', echo=False)
 
 class TechTudoPipeline(object):
     def process_item(self, item, spider):
@@ -51,12 +56,31 @@ class DuplicatesPipeline(object):
    def __init__(self): 
       self.ids_seen = set() 
 
-   def process_item(self, item, spider): 
+   def process_item(self, item, spider):
       if item['url'] in self.ids_seen: 
          raise DropItem("Repeated items found: %s" % item) 
       else: 
          self.ids_seen.add(item['url']) 
          return item
+
+class MySQLWriterPipeline(object):  
+   def process_item(self, item, spider):
+      line = pd.DataFrame(
+         {
+            'author': [item['author']],
+            'title': [item['title']],
+            'subtitle': [item['subtitle']],
+            'date': [item['date']],
+            'text': [item['text']],
+            'url': [item['url']]
+         }
+      )
+      try:
+         line.to_sql(name='test', con=engine, if_exists='append',index=False)
+      except:
+         print('failed to push data to db')
+      pass
+
 
 # class JsonWriterPipeline(object):
 

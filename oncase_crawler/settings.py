@@ -22,7 +22,7 @@ FEED_FORMAT = 'jl'
 
 LOG_ENABLED = True
 LOG_FILE = './{}.log'.format(datetime.now().strftime("%d-%m-%YT%H-%M-%S"))
-LOG_LEVEL = 'INFO'
+# LOG_LEVEL = 'INFO'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'tutorial (+http://www.yourdomain.com)'
@@ -79,6 +79,7 @@ ROBOTSTXT_OBEY = True
 ITEM_PIPELINES = {
    'oncase_crawler.pipelines.TechTudoPipeline': 300,
    'oncase_crawler.pipelines.DuplicatesPipeline': 500,
+   'oncase_crawler.pipelines.MySQLWriterPipeline' : 600
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
