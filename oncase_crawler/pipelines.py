@@ -79,7 +79,7 @@ class MySQLWriterPipeline(object):
          line.to_sql(name='test', con=engine, if_exists='append',index=False)
       except:
          print('failed to push data to db')
-      pass
+      return item
 
 
 # class JsonWriterPipeline(object):
