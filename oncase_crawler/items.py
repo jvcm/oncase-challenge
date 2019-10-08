@@ -7,6 +7,9 @@
 
 import scrapy
 
+# Classe do item que representa a pagina de noticias a ser extraida
+# Para cada URL valida e com dados relevantes, um objeto da classe abaixo e' criado
+# com os atributos representando campos diferentes da noticia
 class Article(scrapy.Item):
     # define the fields for your item here like:
     author = scrapy.Field()
