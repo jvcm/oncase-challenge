@@ -15,16 +15,16 @@ Os dados brutos de cada página são representados por objetos da classe Item qu
 - <b>EmptyPipeline</b>: caso o campo de texto esteja vazio, todos os dados são descartados. Foi possível notar que os dados de páginas mais antigas, postadas em 2017, não eram coletados. Isso deve-se ao fato de que a estrutura da página mudou ligeiramente com o passar o do tempo.
 - <b>MySQLWriterPipeline</b>: se os dados passarem por todas as pipelines anteriores sem problemas, os dados são enviados a um banco de dados relacional MySQL na nuvem (serviço RDS da Amazon Web Services). A conexão é feita através das bibliotecas <i>SQLAlchemy</i> e <i>MySQL-Connector</i>.
 
-Ao final do primeiro processo, foram coletadas informações de quase 20 mil páginas, datadas entre 2017 e 2019, com apenas uma excessão de 2012. Os dados então são coletados em Jupyter Notebook para uma breve análise mostrada a seguir.
+Ao final do primeiro processo, foram coletadas informações de quase 20 mil páginas, datadas entre 2017 e 2019, com apenas uma excessão de 2012. Os dados então são coletados no Jupyter Notebook para uma breve análise mostrada a seguir.
 
 ## Análise de dados
 
-![alt text](https://i.ibb.co/Xj0Y48r/articles-per-year.png)
+![img1](https://i.ibb.co/Xj0Y48r/articles-per-year.png)
 
-![alt text](https://i.ibb.co/SKXx8vY/authors.png)
+![img2](https://i.ibb.co/SKXx8vY/authors.png)
 
-![alt text](https://i.ibb.co/jLtJn3v/Captura-de-tela-de-2019-10-08-23-04-28.png)
+![img3](https://i.ibb.co/jLtJn3v/Captura-de-tela-de-2019-10-08-23-04-28.png)
 
+![img4](https://i.ibb.co/7Ytb8Bk/Captura-de-tela-de-2019-10-08-21-30-34.png)
 
-![alt text](https://i.ibb.co/7Ytb8Bk/Captura-de-tela-de-2019-10-08-21-30-34.png)
 
