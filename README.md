@@ -70,7 +70,7 @@ O sistema conta com dois serviços da Amazon Web Services (AWS):
 
 O servidor periodicamente realiza o crawl nos sites escolhidos e, após coletados os dados, realiza uma carga incremental na base de dados. Como já foi visto, é durante o próprio processo de crawling que evita-se a extração de dados repetidos.
 
-![img4](https://i.ibb.co/tQcTVWg/arch.png)
+![img4](https://i.ibb.co/XzGRNkD/Captura-de-tela-de-2019-10-09-00-24-56.png)
 
 
 ## CRON Jobs
