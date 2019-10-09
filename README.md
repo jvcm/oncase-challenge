@@ -1,4 +1,4 @@
-# Desafio: Web Crawling/Scraping
+# Desafio: Oncase
 
 ## Build
 
@@ -28,7 +28,7 @@ No diretório principal, executar o seguinte comando no terminal:
   scrapy crawl techtudo (ou o nome de outro Crawler)
 ```
 
-## Processo de resolução
+## Resolução: Web Crawling/Scraping
 Primeiro, os sites https://www.techtudo.com.br e https://www.tecmundo.com.br foram inspecionados para saber quais elementos seriam extraídos. A biblioteca utilizada para realizar o crawl/scrap das páginas foi <i>Scrapy</i>, escrita em <i>Python</i>. O procedimento ocorre da seguinte forma:
 
 - A primeira página a ser visitada é a página principal, onde estão contidas as últimas notícias. As URLs disponíveis para os artigos de notícia mais recentes são coletados e visitados pelo crawler.
@@ -70,13 +70,14 @@ O sistema conta com dois serviços da Amazon Web Services (AWS):
 
 O servidor periodicamente realiza o crawl nos sites escolhidos e, após coletados os dados, realiza uma carga incremental na base de dados. Como já foi visto, é durante o próprio processo de crawling que evita-se a extração de dados repetidos.
 
-![img25](https://i.ibb.co/tQcTVWg/arch.png)
+![img4](https://i.ibb.co/tQcTVWg/arch.png)
+
 
 ## CRON Jobs
 
 A instância do EC2 foi programada para executar o crawl/scrap a cada hora por meio do agendador de tarefas CRONTAB do prórpio servidor Linux. A seguir, a imagem retirada da plataforma AWS ilustra o uso da CPU nos exatos momentos agendados. A ideia é tornar o processo automatizado e disponibilizar imediatamente os dados no banco para possíveis análises.
 
-![img4](https://i.ibb.co/7Ytb8Bk/Captura-de-tela-de-2019-10-08-21-30-34.png)
+![img5](https://i.ibb.co/7Ytb8Bk/Captura-de-tela-de-2019-10-08-21-30-34.png)
 
 
 
