@@ -45,9 +45,18 @@ Os dados brutos de cada página são representados por objetos da classe <i>Item
 
 Os arquivos de <i>log</i> do processo são armazenados no servidor, exibindo a quantidade de itens que foram coletados, a quantidade de itens não coletados, os itens que já se encontram no banco de dados, entre outras informações.
 
-Ao final do primeiro processo, foram coletadas informações de quase 20 mil páginas, datadas entre 2017 e 2019, com apenas uma excessão de 2012. Os dados então são coletados no <i>Jupyter Notebook</i> para uma breve análise mostrada a seguir.
+Ao final do primeiro processo, foram coletadas informações de quase 20 mil páginas, datadas entre 2017 e 2019, com apenas uma excessão de 2012. O tempo de execução da primeira carga no banco de dados durou aproximadamente 20 minutos. Porém, as cargas incrementais duram aproximadamente 1 minuto.
 
 ## Análise de dados (TechTudo)
+
+Os dados são disponibilizados em um banco de dados exposto que pode ser acessado de qualquer máquina, necessitando apenas do IP público, nome de usuário e senha.
+
+- Endpoint: articles-db.cxptre9ih5mz.us-east-2.rds.amazonaws.com
+- Usuário: admin
+- Senha: admin123
+
+ Os dados foram analisados no <i>Jupyter Notebook</i>, resultando nos seguintes resultados. 
+
 
 A figura a seguir mostra a quantidade de artigos postados nos anos destacados. Nota-se a presença de apenas um artigo no ano de 2012, destoando-se do restante dos anos (provavelmente algum erro na postagem ou um artigo de 2012 foi reaberto).
 
@@ -60,6 +69,8 @@ A figura a seguir ilustra a quantidade total de artigos por ano dos 10 autores q
 A figura a seguir indica os produtos/serviços mais citados e sua ocorrência em títulos de artigos.
 
 ![img3](https://i.ibb.co/jLtJn3v/Captura-de-tela-de-2019-10-08-23-04-28.png)
+
+Mais informações podem ser criadas, como por exemplo análise de sentimento de cada notícia.
 
 ## Arquitetura do sistema
 
@@ -80,4 +91,8 @@ A instância do EC2 foi programada para executar o crawl/scrap a cada hora por m
 ![img5](https://i.ibb.co/7Ytb8Bk/Captura-de-tela-de-2019-10-08-21-30-34.png)
 
 
+## Limitações e feedback do desafio
 
+Devido ao tempo, não consegui realizar o crawl/scrap no segundo portal de notícias, limitando-me apenas ao site TechTudo. O banco de dados armazena apenas as informações brutas, com algum processamento para limpeza dos textos. Analisando a base de dados a fundo, nota-se que as informações mais antigas não estão perfeitamente claras, uma vez que a estrutura da página e a forma como é escrita mudou ao longo do tempo. Porém, mostrei ser possível extrair mais informações com uma breve análise de dados.
+
+O projeto foi bastante desafiador e serviu para agregar mais conhecimento na área de engenharia de dados. Visto que há uma interseção enorme entre ciência e engenharia de dados, foi de extrema importância aprender o passo a passo do desenvolvimento de um sistema de mineração de dados e, conjuntamente, realizar a análise dos dados minerados.
