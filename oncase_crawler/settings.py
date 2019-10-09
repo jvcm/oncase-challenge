@@ -80,7 +80,7 @@ ITEM_PIPELINES = {
    'oncase_crawler.pipelines.TechTudoPipeline': 300,
    'oncase_crawler.pipelines.DuplicatesPipeline': 400,
    'oncase_crawler.pipelines.EmptyPipeline' : 500,
-   # 'oncase_crawler.pipelines.RepeatedArticlePipeline': 600,
+   'oncase_crawler.pipelines.RepeatedArticlePipeline': 600,
    'oncase_crawler.pipelines.MySQLWriterPipeline' : 700
 }
 

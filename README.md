@@ -53,7 +53,7 @@ Os dados são disponibilizados em um banco de dados exposto que pode ser acessad
 
 - Endpoint: articles-db.cxptre9ih5mz.us-east-2.rds.amazonaws.com
 - Usuário: admin
-- Senha: admin123
+- Senha: ********
 
  Os dados foram analisados no <i>Jupyter Notebook</i>, resultando nos seguintes resultados. 
 
@@ -66,7 +66,7 @@ A figura a seguir ilustra a quantidade total de artigos por ano dos 10 autores q
 
 ![img2](https://i.ibb.co/SKXx8vY/authors.png)
 
-A figura a seguir indica os produtos/serviços mais citados e sua ocorrência em títulos de artigos.
+A figura a seguir indica os produtos/serviços mais citados e sua frequência em títulos de artigos. A métrica pode ser importante, caso estudadas como uma série temporal, para avaliar e tentar prever as tendências de preferência dos usuários de tecnologia.
 
 ![img3](https://i.ibb.co/jLtJn3v/Captura-de-tela-de-2019-10-08-23-04-28.png)
 

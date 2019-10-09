@@ -65,14 +65,19 @@ class RepeatedArticlePipeline(object):
    date = ''
    count = 0
 
+   # No momento em que a instância da pipeline é gerada, o banco de dados é consultado para avaliar
+   # qual a data da notícia mais recente que já foi coletada.
+   # Caso haja algum problema na conexão, um aviso é passado e o programa finalizado (!!!!ajeitar!!!!)
    def __init__(self):
       try: 
          self.date = pd.read_sql(sql = 'techtudo', con=ENGINE, columns= ['date'], parse_dates={'date': '%d/%m/%Y %Hh%M'}).max()[0]
-         print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>{}'.format(str(self.date)))
       except:
          print('Failed to conect to DB')
          pass
-
+   
+   # Se o item coletado não for vazio e a data do artigo coletado for mais recente que da última notícia presente no DB,
+   # o item passa pela pipeline sem problemas.
+   # Caso contrário, a flag para encerrar novos crawlers é ativado e o item descartado.
    def process_item(self, item, spider):
       article_date = datetime.datetime.strptime(item['date'].strip(), "%d/%m/%Y %Hh%M")
 

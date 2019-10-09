@@ -33,6 +33,8 @@ class TechTudoSpider(scrapy.Spider):
 # Os dados serao subsequentemente tratados atraves das pipelines
     def article_parse(self, response):
 
+        # Caso a flag na pipeline de itens repetidos no DB for ativada, o programa levanta uma exceção
+        # e novos dados não serao mais coletados
         if self.close_spider:
             raise CloseSpider('Crawl is finished')
 
