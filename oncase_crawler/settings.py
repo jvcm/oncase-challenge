@@ -16,8 +16,8 @@ BOT_NAME = 'oncase_crawler'
 SPIDER_MODULES = ['oncase_crawler.spiders']
 NEWSPIDER_MODULE = 'oncase_crawler.spiders'
 
-# FEED_URI = './techtudo_data_articles.jl'
-# FEED_FORMAT = 'jl'
+FEED_URI = './techtudo_data_articles.jl'
+FEED_FORMAT = 'jl'
 
 
 LOG_ENABLED = True
@@ -80,8 +80,8 @@ ITEM_PIPELINES = {
    'oncase_crawler.pipelines.TechTudoPipeline': 300,
    'oncase_crawler.pipelines.DuplicatesPipeline': 400,
    'oncase_crawler.pipelines.EmptyPipeline' : 500,
-   'oncase_crawler.pipelines.RepeatedArticlePipeline': 600,
-   'oncase_crawler.pipelines.MySQLWriterPipeline' : 700
+   # 'oncase_crawler.pipelines.RepeatedArticlePipeline': 600,
+   # 'oncase_crawler.pipelines.MySQLWriterPipeline' : 700
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

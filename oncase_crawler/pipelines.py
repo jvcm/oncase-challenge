@@ -16,8 +16,8 @@ import datetime
 import os
 
 # Engine responsavel por estabelecer a conexao com o banco de dados
-USER_PASSWORD_IP_DB = os.environ['MYSQL_DB_ONCASE']
-ENGINE = create_engine(USER_PASSWORD_IP_DB, echo=False)
+# USER_PASSWORD_IP_DB = os.environ['MYSQL_DB_ONCASE']
+# ENGINE = create_engine(USER_PASSWORD_IP_DB, echo=False)
 MAX_COUNT = 12
 
 # Pipeline responsavel por processar os dados: remover caracteres indesejados, espacos
