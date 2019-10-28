@@ -25,11 +25,11 @@ source oncase-env/bin/activate
 #### Execução
 No diretório principal, executar o seguinte comando no terminal:
 ```
-  scrapy crawl techtudo (ou o nome de outro Crawler)
+  scrapy crawl techtudo
 ```
 
 ## Resolução: Web Crawling/Scraping
-Primeiro, os sites https://www.techtudo.com.br e https://www.tecmundo.com.br foram inspecionados para saber quais elementos seriam extraídos. A biblioteca utilizada para realizar o crawl/scrap das páginas foi <i>Scrapy</i>, escrita em <i>Python</i>. O procedimento ocorre da seguinte forma:
+Primeiro, o site https://www.techtudo.com.br foi inspecionado para saber quais elementos seriam extraídos. A biblioteca utilizada para realizar o crawl/scrap das páginas foi <i>Scrapy</i>, escrita em <i>Python</i>. O procedimento ocorre da seguinte forma:
 
 - A primeira página a ser visitada é a página principal, onde estão contidas as últimas notícias. As URLs disponíveis para os artigos de notícia mais recentes são coletados e visitados pelo crawler.
 - Dentro de cada URL de notícia, os dados referentes ao título, subtítulo e texto são extraídos. O nome do autor e a data de postagem também são coletados. Lembrando que a mesma deve possuir domínio igual ao da página principal, para evitar a visita em páginas de outros portais.
