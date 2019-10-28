@@ -13,10 +13,11 @@ import pandas as pd
 import mysql.connector
 from sqlalchemy import create_engine
 import datetime
-
+import os
 
 # Engine responsavel por estabelecer a conexao com o banco de dados
-ENGINE = create_engine('mysql+mysqlconnector://admin:admin123@articles-db.cxptre9ih5mz.us-east-2.rds.amazonaws.com:3306/articles', echo=False)
+USER_PASSWORD_IP_DB = os.environ['MYSQL_DB_ONCASE']
+ENGINE = create_engine(USER_PASSWORD_IP_DB, echo=False)
 MAX_COUNT = 12
 
 # Pipeline responsavel por processar os dados: remover caracteres indesejados, espacos
